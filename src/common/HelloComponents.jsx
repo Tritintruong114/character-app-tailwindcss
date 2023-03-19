@@ -27,14 +27,14 @@ function HelloComponents() {
 
   const variants = {
     default: {
-      x: mousePosition.x - 24,
-      y: mousePosition.y - 24,
+      x: mousePosition.x - 6,
+      y: mousePosition.y - 6,
     },
     text: {
-      height: 200,
-      width: 200,
-      x: mousePosition.x - 24,
-      y: mousePosition.y - 24,
+      height: 180,
+      width: 180,
+      x: mousePosition.x - 6,
+      y: mousePosition.y - 6,
       mixBlendMode: "overlay",
       // setTextChange("This is Tailwind CSS"),
     },
