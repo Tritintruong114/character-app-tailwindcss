@@ -13,7 +13,8 @@ function MainContainer() {
   };
   return (
     <>
-      <div className="bg-gradient-to-br h-screen relative from-red-200 via-red-200 to-rose-300 items-center justify-center flex ">
+    
+      <div className="bg-[conic-gradient(at_left,_var(--tw-gradient-stops))] from-neutral-300 via-orange-200 to-fuchsia-300 items-center  justify-center h-screen relative flex ">
         <div className="absolute bottom-9 hover:scale-125 transition ease-in-out">
           <button
             onClick={handleClick}
@@ -29,7 +30,7 @@ function MainContainer() {
         <Header />
       </div>
 
-      <MainSecond ref={ref} text="This is awsome" />
+      <MainSecond ref={ref} />
     </>
   );
 }

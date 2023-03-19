@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import ReactTypingEffect from 'react-typing-effect';
 
 function HelloComponents() {
   const [mousePosition, setMousePosition] = useState({
@@ -8,7 +9,7 @@ function HelloComponents() {
   });
 
   const [cursorVariant, setCursorVariant] = useState("default");
-  const [textChange, setTextChange] = useState("Hello World!");
+  const [textChange, setTextChange] = useState("Hi!");
   useEffect(() => {
     const mouseMove = (position) => {
       // console.log(position);
@@ -35,7 +36,7 @@ function HelloComponents() {
       width: 180,
       x: mousePosition.x - 6,
       y: mousePosition.y - 6,
-      mixBlendMode: "difference",
+      mixBlendMode: "HARD-LIGHT",
       // border: 2,
       // backgroundColor: "yellow",
       // setTextChange("This is Tailwind CSS"),
@@ -44,12 +45,12 @@ function HelloComponents() {
 
   const textEnter = () => {
     setCursorVariant("text");
-    setTextChange("Halo TA");
+    setTextChange("You look cute.");
   };
 
   const textLeave = () => {
     setCursorVariant("default");
-    setTextChange("Hello World!");
+    setTextChange("Hi")
   };
   // console.log(mousePosition);
   return (
@@ -58,11 +59,12 @@ function HelloComponents() {
         <h1
           onMouseEnter={textEnter}
           onMouseLeave={textLeave}
-          className="text-3xl  text-gray-100 font-bold md:text-6xl xl:text-8xl"
+          className="text-6xl font-mono text-gray-100 font-bold md:text-8xl xl:text-9xl"
         >
-          {textChange}
+          <ReactTypingEffect eraseSpeed={18} eraseDelay={3000} speed={18} text={["Hi there👋," ,"Thank you!","You guys are amazing!"]}/>
         </h1>
       </div>
+      {/* <ReactTypingEffect className="text-3xl md:text-6xl xl:text-6xl capitalize"   speed={20} text={["Thanks! ", "for all !"]}/> */}
       <motion.div
         variants={variants}
         animate={cursorVariant}

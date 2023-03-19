@@ -1,5 +1,7 @@
 import React from "react";
 // import { useScroll, useTransform } from "framer-motion";
+import ReactTypingEffect from 'react-typing-effect';
+
 //This is the Header for something fun
 function Header() {
   return (
@@ -8,9 +10,9 @@ function Header() {
         <h3 className="text-gray-600  md:text-md xl:text-xl font-light text-xs sm:text-lg flex flex-row items-center justify-center">
           Made by
           <p className="font-bold px-1 md:text-md xl:text-xl text-xs sm:text-lg text-gray-500">
-            Bruno Truong
+            <ReactTypingEffect speed={9} text={"Bruno Truong"}/>
           </p>
-        </h3>
+        </h3> 
       </div>
 
       <div className="grid grid-cols-1">
