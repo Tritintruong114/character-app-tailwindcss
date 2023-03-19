@@ -3,10 +3,8 @@ import React from "react";
 //This is component for main Avatar
 function Avatar() {
   return (
-    <div className="h-fit flex justify-center items-center md:w-2/6 xl:w-5/12">
-      <div className="w-3/4 bg-slate-500 h-screen md:w-2/6 xl:w-9/12 flex justify-center items-center">
-        ABC
-      </div>
+    <div className="h-screen md:w-screen flex justify-center items-center xl:w-screen">
+      <div className="w-3/4 bg-slate-500 h-5/6  md:w-3/6 xl:w-4/12 flex justify-center items-center"></div>
     </div>
   );
 }
