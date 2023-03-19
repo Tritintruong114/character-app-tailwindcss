@@ -7,6 +7,8 @@ function HelloComponents() {
     y: 0,
   });
 
+  const [cursorVariant, setCursorVariant] = useState("default");
+  const [textChange, setTextChange] = useState("Hello World!");
   useEffect(() => {
     const mouseMove = (position) => {
       // console.log(position);
@@ -22,23 +24,47 @@ function HelloComponents() {
       window.removeEventListener("mousemove", mouseMove);
     };
   }, []);
+
   const variants = {
     default: {
-      x: mousePosition.x - 1.5,
-      y: mousePosition.y - 1.5,
-      backgroundColor: "red",
+      x: mousePosition.x - 24,
+      y: mousePosition.y - 24,
+    },
+    text: {
+      height: 200,
+      width: 200,
+      x: mousePosition.x - 24,
+      y: mousePosition.y - 24,
+      mixBlendMode: "overlay",
+      // setTextChange("This is Tailwind CSS"),
     },
   };
-  console.log(mousePosition);
+
+  const textEnter = () => {
+    setCursorVariant("text");
+    setTextChange("Halo TA");
+  };
+
+  const textLeave = () => {
+    setCursorVariant("default");
+    setTextChange("Hello World!");
+  };
+  // console.log(mousePosition);
   return (
-    <div className="absolute flex items-center">
-      <h1 className="text-3xl font-bold md:text-6xl xl:text-7xl">
-        Hello World!
-      </h1>
+    <div className="absolute flex flex-col items-center w-full justify-center">
+      <div className="w-full sm:w-full md:w-3/4 xl:w-3/4">
+        <h1
+          onMouseEnter={textEnter}
+          onMouseLeave={textLeave}
+          className="text-3xl  text-gray-100 font-bold md:text-6xl xl:text-8xl"
+        >
+          {textChange}
+        </h1>
+      </div>
       <motion.div
         variants={variants}
-        animate="default"
-        className="bg-black rounded-full h-3 w-3 md:h-9 md:w-9 xl:h-11 xl:w-11 fixed top-0 left-0"
+        animate={cursorVariant}
+        className="bg-gradient-to-br pointer-events-none from-red-200 via-red-200 to-rose-300 rounded-full h-3 w-3 md:h-9 md:w-9 xl:h-11 xl:w-11 fixed top-0 left-0"
       ></motion.div>
     </div>
   );

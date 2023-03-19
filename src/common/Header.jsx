@@ -1,5 +1,5 @@
 import React from "react";
-
+// import { useScroll, useTransform } from "framer-motion";
 //This is the Header for something fun
 function Header() {
   return (
