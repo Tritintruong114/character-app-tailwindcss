@@ -35,7 +35,9 @@ function HelloComponents() {
       width: 180,
       x: mousePosition.x - 6,
       y: mousePosition.y - 6,
-      mixBlendMode: "overlay",
+      mixBlendMode: "difference",
+      // border: 2,
+      // backgroundColor: "yellow",
       // setTextChange("This is Tailwind CSS"),
     },
   };
