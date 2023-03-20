@@ -27,7 +27,8 @@ const Avatar = ({
         {/* This is for the Avatar picture container */}
         <div className="absolute w-full h-5/6 top-6 p-3 flex justify-center items-center">
           <div className="bg-gray-400 rounded-xl text-white w-10/12 h-full justify-center items-center flex">
-            <div>
+            <PartOfAvatar />
+            {/* <PartOfAvatar />
               <PartOfAvatar />
               <PartOfAvatar />
               <PartOfAvatar />
@@ -36,10 +37,7 @@ const Avatar = ({
               <PartOfAvatar />
               <PartOfAvatar />
               <PartOfAvatar />
-              <PartOfAvatar />
-              <PartOfAvatar />
-              <PartOfAvatar />
-            </div>
+              <PartOfAvatar /> */}
           </div>
         </div>
         {/* This is for the div contain the 2 button below */}

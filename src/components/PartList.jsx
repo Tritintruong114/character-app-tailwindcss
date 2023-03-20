@@ -12,6 +12,8 @@ const total = {
   clothing2: 5,
   clothing3: 9,
 };
+// const getPathImg = require.context("/src/assets/body", true);
+// const adjustPathImg = getPathImg.keys().map((audio) => audio);
 //This component is a container to contain the part of every body array.
 function PartList() {
   ///This contant for rendering the all buttons of the list
@@ -30,6 +32,10 @@ function PartList() {
   // const [listOfNeckwear, setListOfNeckwear] = useState("");
   // const [listOfHair, setlistOfHair] = useState("");
   // const [listOfBody, setListOfBody] = useState("");
+
+  //Using the
+
+  // console.log(adjustPathImg);
 
   const totalButtons = [
     //This is a arrays of Object. In a object having 2 key, one is id nad name.
@@ -116,8 +122,7 @@ function PartList() {
       <div className="w-3/4 h-4/5 absolute bottom-6 justify-center items-center bg-stone-500 flex">
         {/* This one much be using render base on handlCLick to the Buttons */}
         <div>
-          <img src="#" alt="#"></img>
-          {/* This is the image of the body list, take it from the assets */}
+          <img src="/assets/body/3.png" alt=""></img>
         </div>
       </div>
     </div>
