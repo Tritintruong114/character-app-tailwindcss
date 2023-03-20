@@ -62,10 +62,10 @@ function HelloComponents() {
           className="text-3xl font-mono text-gray-100 font-bold md:text-6xl xl:text-7xl"
         >
           <ReactTypingEffect
-            eraseSpeed={18}
-            eraseDelay={3000}
-            speed={18}
-            text={["Hi there👋,", "Thank you!", "You guys are amazing!"]}
+            eraseSpeed={21}
+            eraseDelay={1000}
+            speed={21}
+            text={["Hi there👋,Wait!", "Thank you!", "You guys are amazing!"]}
           />
         </h1>
       </div>

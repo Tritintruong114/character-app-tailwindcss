@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import PartContainer from './../common/PartContainer';
 const total = {
   body: 17,
   eyes: 17,
@@ -12,31 +13,10 @@ const total = {
   clothing2: 5,
   clothing3: 9,
 };
-// const getPathImg = require.context("/src/assets/body", true);
-// const adjustPathImg = getPathImg.keys().map((audio) => audio);
+
 //This component is a container to contain the part of every body array.
-function PartList() {
+const PartList= (pathOfAssets) => {
   ///This contant for rendering the all buttons of the list
-
-  // const [listOfEarrings, setListOfEarrings] = useState("");
-  // const [listOfEyes, setListOfEyes] = useState("");
-  // const [listOfFacialHair, setListOfFacialHair] = useState("");
-  // const [listOfMouths, setListOfMouths] = useState("");
-  // const [listOfNoses, setListOfNoses] = useState("");
-  // const [listOfEyeBrows, setListOfEyeBrows] = useState("");
-  // const [listOfLayer1, setListOfLayer1] = useState("");
-  // const [listOfLayer2, setListOfLayer2] = useState("");
-  // const [listOfLayer3, setListOfLayer3] = useState("");
-  // const [listOfGlasses, setListOfGlasses] = useState("");
-  // const [listOfHats, setListOfHats] = useState("");
-  // const [listOfNeckwear, setListOfNeckwear] = useState("");
-  // const [listOfHair, setlistOfHair] = useState("");
-  // const [listOfBody, setListOfBody] = useState("");
-
-  //Using the
-
-  // console.log(adjustPathImg);
-
   const totalButtons = [
     //This is a arrays of Object. In a object having 2 key, one is id nad name.
     {
@@ -97,10 +77,9 @@ function PartList() {
       name: "layer3",
     },
   ];
-
   // this button work very well.
   const handleClick = () => {
-    console.log("Testing the button");
+    
   };
   return (
     <div className="h-screen relative justify-center items-center w-full flex flex-col  bg-rose-600">
@@ -120,10 +99,14 @@ function PartList() {
 
       {/* This using the main Container */}
       <div className="w-3/4 h-4/5 absolute bottom-6 justify-center items-center bg-stone-500 flex">
+        
         {/* This one much be using render base on handlCLick to the Buttons */}
-        <div>
-          <img src="/assets/body/3.png" alt=""></img>
-        </div>
+
+    
+        <PartContainer pathOfAssets={"layer_2"} />
+        <PartContainer pathOfAssets={"layer_3"} />
+        
+
       </div>
     </div>
   );
