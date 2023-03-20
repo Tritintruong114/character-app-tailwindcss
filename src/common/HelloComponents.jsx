@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import ReactTypingEffect from 'react-typing-effect';
+import ReactTypingEffect from "react-typing-effect";
 
 function HelloComponents() {
   const [mousePosition, setMousePosition] = useState({
@@ -45,12 +45,12 @@ function HelloComponents() {
 
   const textEnter = () => {
     setCursorVariant("text");
-    setTextChange("You look cute.");
+    setTextChange("You look cute!");
   };
 
   const textLeave = () => {
     setCursorVariant("default");
-    setTextChange("Hi")
+    setTextChange("Hi");
   };
   // console.log(mousePosition);
   return (
@@ -59,9 +59,14 @@ function HelloComponents() {
         <h1
           onMouseEnter={textEnter}
           onMouseLeave={textLeave}
-          className="text-6xl font-mono text-gray-100 font-bold md:text-8xl xl:text-9xl"
+          className="text-3xl font-mono text-gray-100 font-bold md:text-6xl xl:text-7xl"
         >
-          <ReactTypingEffect eraseSpeed={18} eraseDelay={3000} speed={18} text={["Hi there👋," ,"Thank you!","You guys are amazing!"]}/>
+          <ReactTypingEffect
+            eraseSpeed={18}
+            eraseDelay={3000}
+            speed={18}
+            text={["Hi there👋,", "Thank you!", "You guys are amazing!"]}
+          />
         </h1>
       </div>
       {/* <ReactTypingEffect className="text-3xl md:text-6xl xl:text-6xl capitalize"   speed={20} text={["Thanks! ", "for all !"]}/> */}
