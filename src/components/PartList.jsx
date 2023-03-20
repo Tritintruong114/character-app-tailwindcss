@@ -90,15 +90,15 @@ const PartList = (pathOfAssets) => {
 
     {
       id: 12,
-      name: "layer1",
+      name: "basics",
     },
     {
       id: 13,
-      name: "layer2",
+      name: "layers",
     },
     {
       id: 14,
-      name: "layer3",
+      name: "wearings",
     },
   ];
   // this button work very well.
@@ -146,13 +146,13 @@ const PartList = (pathOfAssets) => {
         {renderArrays === "hairs" &&
         <PartContainer pathOfAssets={"hairs"} index={total.hairs}/> 
         }
-        {renderArrays === "layer_1" &&
+        {renderArrays === "basics" &&
         <PartContainer pathOfAssets={"layer_1"} index={total.layer1}/>
         }
-        {renderArrays === "layer_2" &&
+        {renderArrays === "layers" &&
         <PartContainer pathOfAssets={"layer_2"} index={total.layer2}/>
         }
-        {renderArrays === "layer_3" &&
+        {renderArrays === "wearings" &&
         <PartContainer pathOfAssets={"layer_3"} index={total.layer3}/>
         }
         {renderArrays === "mouths" &&

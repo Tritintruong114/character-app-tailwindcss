@@ -15,7 +15,7 @@
   }
 }
 ::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
 }
 .App-header {
   background-color: #282c34;
