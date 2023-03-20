@@ -23,21 +23,24 @@ const total = {
 //This component is a container to contain the part of every body array.
 const PartList = (pathOfAssets) => {
   
-  const [renderBodys, setRenderBodys] = useState(false);
-  const [renderEarrings, setRenderEarrings] = useState(false);
-  const [renderEyebrows, setRenderEyebrows] = useState(false);
-  const [renderEyes, setRenderEyes] = useState(false);
-  const [renderFacial_Hairs, setRenderFacial_Hairs] = useState(false);
-  const [renderGlasses, setRenderGlasses] = useState(false);
-  const [renderHairs, setRenderHairs] = useState(false);
-  const [renderHats, setRenderHats] = useState(false);
-  const [renderLayer_1, setRenderLayer_1] = useState(false);
-  const [renderLayer_2, setRenderLayer_2] = useState(false);
-  const [renderLayer_3, setRenderLayer_3] = useState(false);
-  const [renderMouths, setRenderMouths] = useState(false);
-  const [renderNeckwears, setRenderNeckwears] = useState(false);
-  const [renderNoses, setRenderNoses] = useState(false);
+  // const [renderBodys, setRenderBodys] = useState(false);
+  // const [renderEarrings, setRenderEarrings] = useState(false);
+  // const [renderEyebrows, setRenderEyebrows] = useState(false);
+  // const [renderEyes, setRenderEyes] = useState(false);
+  // const [renderFacial_Hairs, setRenderFacial_Hairs] = useState(false);
+  // const [renderGlasses, setRenderGlasses] = useState(false);
+  // const [renderHairs, setRenderHairs] = useState(false);
+  // const [renderHats, setRenderHats] = useState(false);
+  // const [renderLayer_1, setRenderLayer_1] = useState(false);
+  // const [renderLayer_2, setRenderLayer_2] = useState(false);
+  // const [renderLayer_3, setRenderLayer_3] = useState(false);
+  // const [renderMouths, setRenderMouths] = useState(false);
+  // const [renderNeckwears, setRenderNeckwears] = useState(false);
+  // const [renderNoses, setRenderNoses] = useState(false);
+
+  const [renderArrays, setRenderArrays] = useState("");
   ///This contant for rendering the all buttons of the list
+
   const totalButtons = [
     //This is a arrays of Object. In a object having 2 key, one is id nad name.
     {
@@ -58,7 +61,7 @@ const PartList = (pathOfAssets) => {
     },
     {
       id: 5,
-      name: "body",
+      name: "bodys",
     },
     {
       id: 6,
@@ -70,11 +73,11 @@ const PartList = (pathOfAssets) => {
     },
     {
       id: 8,
-      name: "facial_hair",
+      name: "facial_hairs",
     },
     {
       id: 9,
-      name: "hair",
+      name: "hairs",
     },
     {
       id: 10,
@@ -101,7 +104,7 @@ const PartList = (pathOfAssets) => {
   // this button work very well.
   const handleClick = (i) => {
     console.log(i);
-    if(i===0){setRenderEarrings(true)}
+    setRenderArrays(i)
 
   };
   return (
@@ -122,18 +125,36 @@ const PartList = (pathOfAssets) => {
       {/* This using the main Container */}
       <div className="w-3/4 h-4/5 relative bottom-6 justify-center items-center bg-stone-500 flex">
         
-        {renderBodys && 
-          (<PartContainer pathOfAssets={"body"} index={total.body} />)
+        {renderArrays === "bodys" && 
+          (<PartContainer pathOfAssets={"body"} index={total.bodys} />)
         }
-        {renderEarrings && <PartContainer pathOfAssets={"earrings"}  index={total.earrings}/>}
-        <PartContainer pathOfAssets={"eyebrows"}/>
-        {renderEyes && <PartContainer pathOfAssets={"eyes"} index={total.eyes}/>}
-        <PartContainer pathOfAssets={"facial_hair"} />
+        {renderArrays === "earrings" &&
+          <PartContainer pathOfAssets={"earrings"} index={total.earrings} />}
+        {renderArrays === "eyebrows" &&
+          <PartContainer pathOfAssets={"eyebrows"} index={total.eyebrows} />}
+        {renderArrays === "eyes" &&
+          <PartContainer pathOfAssets={"eyes"} index={total.eyes} />}
+        {renderArrays === "facial_hairs" &&
+          <PartContainer pathOfAssets={"facial_hair"} />}
+        {renderArrays === "glasses" &&
         <PartContainer pathOfAssets={"glasses"}/>
-        <PartContainer pathOfAssets={"hair"}/> 
+        }
+        {renderArrays === "hairs" &&
+        
+        <PartContainer pathOfAssets={"hairs"}/> 
+        }
+
+        {renderArrays === "layer_1" &&
+        
         <PartContainer pathOfAssets={"layer_1"}/>
+        }
+        
+        {renderArrays === "layer_2" &&
         <PartContainer pathOfAssets={"layer_2"}/>
+        }
+        {renderArrays === "layer_3" &&
         <PartContainer pathOfAssets={"layer_3"}/>
+        }
         <PartContainer pathOfAssets={"mouths"}/>
         <PartContainer pathOfAssets={"neckwear"}/>
         <PartContainer pathOfAssets={"noses"} /> 
