@@ -1,8 +1,24 @@
 import React from "react";
 // import PartList from "./PartList";
+import PartOfAvatar from "./PartOfAvatar";
 
 //This is component for main Avatar
-function Avatar() {
+const Avatar = ({
+  body,
+  clothes1,
+  clothes2,
+  clothes3,
+  eyebrows,
+  eyes,
+  facial_hair,
+  hair,
+  mouths,
+  noses,
+  earrings,
+  glasses,
+  hats,
+  neckwear,
+}) => {
   return (
     //   This is big container for the Avater Component
     <div className="h-screen md:w-full flex justify-center items-center xl:w-full">
@@ -11,7 +27,19 @@ function Avatar() {
         {/* This is for the Avatar picture container */}
         <div className="absolute w-full h-5/6 top-6 p-3 flex justify-center items-center">
           <div className="bg-gray-400 rounded-xl text-white w-10/12 h-full justify-center items-center flex">
-            Avatar Container
+            <div>
+              <PartOfAvatar />
+              <PartOfAvatar />
+              <PartOfAvatar />
+              <PartOfAvatar />
+              <PartOfAvatar />
+              <PartOfAvatar />
+              <PartOfAvatar />
+              <PartOfAvatar />
+              <PartOfAvatar />
+              <PartOfAvatar />
+              <PartOfAvatar />
+            </div>
           </div>
         </div>
         {/* This is for the div contain the 2 button below */}
@@ -26,6 +54,6 @@ function Avatar() {
       </div>
     </div>
   );
-}
+};
 
 export default Avatar;
