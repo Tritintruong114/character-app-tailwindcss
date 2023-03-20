@@ -5,7 +5,7 @@ import React from "react";
 function PartOfAvatar({ path, index, zIndex }) {
   return (
     <div>
-      <img style={zIndex} src="assets/body/1.png" alt=""></img>
+      <img src="assets/body/1.png" alt=""></img>
     </div>
   );
 }

@@ -3,18 +3,6 @@ import { useEffect, useState } from "react";
 import Avatar from "./Avatar";
 import { forwardRef } from "react";
 import PartList from "./PartList";
-const total = {
-  body: 17,
-  eyes: 17,
-  hair: 73,
-  mouth: 24,
-  eyebrows: 15,
-  hat: 28,
-  glasses: 17,
-  clothing1: 5,
-  clothing2: 5,
-  clothing3: 9,
-};
 
 const MainSecond = ({}, ref) => {
   return (
