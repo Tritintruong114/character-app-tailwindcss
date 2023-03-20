@@ -126,38 +126,44 @@ const PartList = (pathOfAssets) => {
       <div className="w-3/4 h-4/5 relative bottom-6 justify-center items-center bg-stone-500 flex">
         
         {renderArrays === "bodys" && 
-          (<PartContainer pathOfAssets={"body"} index={total.bodys} />)
+          <PartContainer pathOfAssets={"body"} index={total.bodys} />
         }
         {renderArrays === "earrings" &&
-          <PartContainer pathOfAssets={"earrings"} index={total.earrings} />}
+          <PartContainer pathOfAssets={"earrings"} index={total.earrings} />
+        }
         {renderArrays === "eyebrows" &&
-          <PartContainer pathOfAssets={"eyebrows"} index={total.eyebrows} />}
+          <PartContainer pathOfAssets={"eyebrows"} index={total.eyebrows} />
+        }
         {renderArrays === "eyes" &&
-          <PartContainer pathOfAssets={"eyes"} index={total.eyes} />}
+          <PartContainer pathOfAssets={"eyes"} index={total.eyes} />
+        }
         {renderArrays === "facial_hairs" &&
-          <PartContainer pathOfAssets={"facial_hair"} />}
+          <PartContainer pathOfAssets={"facial_hair"} index={total.facial_hairs}/>
+        }
         {renderArrays === "glasses" &&
-        <PartContainer pathOfAssets={"glasses"}/>
+        <PartContainer pathOfAssets={"glasses"} index={total.glasses}/>
         }
         {renderArrays === "hairs" &&
-        
-        <PartContainer pathOfAssets={"hairs"}/> 
+        <PartContainer pathOfAssets={"hairs"} index={total.hairs}/> 
         }
-
         {renderArrays === "layer_1" &&
-        
-        <PartContainer pathOfAssets={"layer_1"}/>
+        <PartContainer pathOfAssets={"layer_1"} index={total.layer1}/>
         }
-        
         {renderArrays === "layer_2" &&
-        <PartContainer pathOfAssets={"layer_2"}/>
+        <PartContainer pathOfAssets={"layer_2"} index={total.layer2}/>
         }
         {renderArrays === "layer_3" &&
-        <PartContainer pathOfAssets={"layer_3"}/>
+        <PartContainer pathOfAssets={"layer_3"} index={total.layer3}/>
         }
-        <PartContainer pathOfAssets={"mouths"}/>
-        <PartContainer pathOfAssets={"neckwear"}/>
-        <PartContainer pathOfAssets={"noses"} /> 
+        {renderArrays === "mouths" &&
+        <PartContainer pathOfAssets={"mouths"} index={total.mouths}/>
+        }
+        {renderArrays === "neckwear" &&
+        <PartContainer pathOfAssets={"neckwear"} index={total.neckwear}/>
+        }
+        {renderArrays === "noses" &&
+        <PartContainer pathOfAssets={"noses"} index={total.noses}/> 
+        }
         
       </div>
     </div>
