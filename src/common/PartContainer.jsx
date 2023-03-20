@@ -1,16 +1,16 @@
 import React from 'react'
 
-const PartContainer = ({ pathOfAssets }) => {
-  
-  
+const PartContainer = ({ pathOfAssets,index }) => {
+  let arrayOfParts = [];
+  for (let i = 0; i < index; i++){
+    arrayOfParts.push(
+    <img key={pathOfAssets+1} src={`/assets/${pathOfAssets}/${i + 1}.png`}alt=""></img>
+ )
+  }
   return (
-     <div className="w-3/4 h-4/5 absolute bottom-6 justify-center items-center bg-stone-500 flex">
-     {/* This one much be using render base on handlCLick to the Buttons */}
-     <div>
-       <img src={`/assets/${pathOfAssets}/3.png`}alt=""></img>
+     <div className="h-full w-full grid grid-cols-2 overflow-x-scroll items-center justify-center absolute ">
+       {arrayOfParts}
      </div>
-     
-   </div>
   )
 }
 
