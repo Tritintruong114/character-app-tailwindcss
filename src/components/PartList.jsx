@@ -19,7 +19,7 @@ const total = {
 };
 
 //This component is a container to contain the part of every body array.
-const PartList = (pathOfAssets) => {
+const PartList = ({ pathOfAssets }) => {
   // const [renderBodys, setRenderBodys] = useState(false);
   // const [renderEarrings, setRenderEarrings] = useState(false);
   // const [renderEyebrows, setRenderEyebrows] = useState(false);
@@ -34,7 +34,7 @@ const PartList = (pathOfAssets) => {
   // const [renderMouths, setRenderMouths] = useState(false);
   // const [renderNeckwears, setRenderNeckwears] = useState(false);
   // const [renderNoses, setRenderNoses] = useState(false);
-
+  const [pathForAvatar, setPathForAvatar] = useState("");
   const [renderArrays, setRenderArrays] = useState("");
   ///This contant for rendering the all buttons of the list
 
@@ -98,15 +98,20 @@ const PartList = (pathOfAssets) => {
       name: "wearings",
     },
   ];
+
+  const handleClickSetAvatar = (i) => {
+    console.log(i);
+  };
   // this button work very well.
   const handleClick = (i) => {
     console.log(i);
     setRenderArrays(i);
+    setPathForAvatar(i);
   };
   return (
     <div className="h-screen relative justify-center items-center pb-3  w-full flex flex-col">
       {/* This using the main Container */}
-      <h1 className="w-full font- flex justify-center items-center font-bold absolute text-2xl top-1">
+      <h1 className="w-full font- flex justify-center items-center font-light font-serif absolute text-2xl top-1">
         Character
       </h1>
       <div className="w-3/4 h-5/6 absolute bottom-8 m-3 shadow-[0px_6px_6px_0px_rgba(0,2,30)] justify-center bg-gradient-to-l   from-rose-100 to-teal-100 rounded-xl  items-center flex">
@@ -124,49 +129,102 @@ const PartList = (pathOfAssets) => {
           ))}
         </div>
         {renderArrays === "bodys" && (
-          <PartContainer pathOfAssets={"body"} index={total.bodys} />
+          <PartContainer
+            handleClickSetAvatar={handleClickSetAvatar}
+            pathOfAssets={"body"}
+            index={total.bodys}
+          />
         )}
         {renderArrays === "earrings" && (
-          <PartContainer pathOfAssets={"earrings"} index={total.earrings} />
+          <PartContainer
+            handleClickSetAvatar={handleClickSetAvatar}
+            pathOfAssets={"earrings"}
+            index={total.earrings}
+          />
         )}
         {renderArrays === "eyebrows" && (
-          <PartContainer pathOfAssets={"eyebrows"} index={total.eyebrows} />
+          <PartContainer
+            handleClickSetAvatar={handleClickSetAvatar}
+            pathOfAssets={"eyebrows"}
+            index={total.eyebrows}
+          />
         )}
         {renderArrays === "eyes" && (
-          <PartContainer pathOfAssets={"eyes"} index={total.eyes} />
+          <PartContainer
+            handleClickSetAvatar={handleClickSetAvatar}
+            pathOfAssets={"eyes"}
+            index={total.eyes}
+          />
         )}
         {renderArrays === "facial_hairs" && (
           <PartContainer
+            handleClickSetAvatar={handleClickSetAvatar}
             pathOfAssets={"facial_hair"}
             index={total.facial_hairs}
           />
         )}
         {renderArrays === "glasses" && (
-          <PartContainer pathOfAssets={"glasses"} index={total.glasses} />
+          <PartContainer
+            handleClickSetAvatar={handleClickSetAvatar}
+            pathOfAssets={"glasses"}
+            index={total.glasses}
+          />
         )}
         {renderArrays === "hairs" && (
-          <PartContainer pathOfAssets={"hairs"} index={total.hairs} />
+          <PartContainer
+            handleClickSetAvatar={handleClickSetAvatar}
+            pathOfAssets={"hairs"}
+            index={total.hairs}
+          />
         )}
         {renderArrays === "basics" && (
-          <PartContainer pathOfAssets={"layer_1"} index={total.layer1} />
+          <PartContainer
+            handleClickSetAvatar={handleClickSetAvatar}
+            pathOfAssets={"layer_1"}
+            index={total.layer1}
+          />
         )}
         {renderArrays === "layers" && (
-          <PartContainer pathOfAssets={"layer_2"} index={total.layer2} />
+          <PartContainer
+            handleClickSetAvatar={handleClickSetAvatar}
+            pathOfAssets={"layer_2"}
+            index={total.layer2}
+          />
         )}
         {renderArrays === "wearings" && (
-          <PartContainer pathOfAssets={"layer_3"} index={total.layer3} />
+          <PartContainer
+            handleClickSetAvatar={handleClickSetAvatar}
+            pathOfAssets={"layer_3"}
+            index={total.layer3}
+          />
         )}
         {renderArrays === "mouths" && (
-          <PartContainer pathOfAssets={"mouths"} index={total.mouths} />
+          <PartContainer
+            handleClickSetAvatar={handleClickSetAvatar}
+            pathOfAssets={"mouths"}
+            index={total.mouths}
+          />
         )}
         {renderArrays === "neckwear" && (
-          <PartContainer pathOfAssets={"neckwear"} index={total.neckwear} />
+          <PartContainer
+            handleClickSetAvatar={handleClickSetAvatar}
+            pathOfAssets={"neckwear"}
+            index={total.neckwear}
+          />
         )}
         {renderArrays === "noses" && (
-          <PartContainer pathOfAssets={"noses"} index={total.noses} />
+          <PartContainer
+            handleClickSetAvatar={handleClickSetAvatar}
+            pathOfAssets={"noses"}
+            index={total.noses}
+          />
         )}
         {renderArrays === "hats" && (
-          <PartContainer pathOfAssets={"hats"} index={total.hats} />
+          <PartContainer
+            handleClickSetAvatar={handleClickSetAvatar}
+            pathOfAssets={"hats"}
+            index={total.hats}
+          />
         )}
       </div>
     </div>

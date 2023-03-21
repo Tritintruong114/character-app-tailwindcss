@@ -4,10 +4,12 @@ import React from "react";
 // This is the main of the APP
 function PartOfAvatar({ path, index, zIndex }) {
   return (
-    <div className="relative flex justify-center items-center h-full  w-full">
-      <img src="assets/body/3.png" zIndex={0} className="absolute" alt=""></img>
-      <img src="assets/hair/3.png" zIndex={1} className="absolute" alt=""></img>
-    </div>
+    <img
+      src={`assets/${path}/${index}.png`}
+      zIndex={zIndex}
+      className="absolute h-5/6"
+      alt=""
+    ></img>
   );
 }
 

@@ -1,10 +1,11 @@
 import React from "react";
 
-const PartContainer = ({ pathOfAssets, index }) => {
+const PartContainer = ({ handleClickSetAvatar, pathOfAssets, index }) => {
   let arrayOfParts = [];
   for (let i = 0; i < index; i++) {
     arrayOfParts.push(
       <img
+        onClick={() => handleClickSetAvatar(i)}
         key={pathOfAssets + 1}
         src={`/assets/${pathOfAssets}/${i + 1}.png`}
         alt=""
