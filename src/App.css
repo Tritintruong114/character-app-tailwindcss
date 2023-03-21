@@ -1,9 +1,9 @@
 .App {
   text-align: center;
 }
-*{
+/* *{
   cursor: none;
-}
+} */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -15,7 +15,7 @@
   }
 }
 ::-webkit-scrollbar {
-  /* display: none; */
+  display: none;
 }
 .App-header {
   background-color: #282c34;

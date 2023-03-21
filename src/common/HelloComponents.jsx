@@ -70,11 +70,11 @@ function HelloComponents() {
         </h1>
       </div>
       {/* <ReactTypingEffect className="text-3xl md:text-6xl xl:text-6xl capitalize"   speed={20} text={["Thanks! ", "for all !"]}/> */}
-      <motion.div
+      {/* <motion.div
         variants={variants}
         animate={cursorVariant}
         className="bg-gradient-to-br pointer-events-none from-red-200 via-red-200 to-rose-300 rounded-full h-3 w-3 md:h-9 md:w-9 xl:h-11 xl:w-11 fixed top-0 left-0"
-      ></motion.div>
+      ></motion.div> */}
     </div>
   );
 }

@@ -1,13 +1,13 @@
 import React from "react";
 import { useState } from "react";
-import PartContainer from './../common/PartContainer';
+import PartContainer from "./../common/PartContainer";
 const total = {
-  earrings:32,
+  earrings: 32,
   bodys: 17,
   eyes: 17,
   hairs: 73,
   mouths: 24,
-  facial_hairs:17,
+  facial_hairs: 17,
   eyebrows: 15,
   hats: 28,
   glasses: 17,
@@ -15,14 +15,11 @@ const total = {
   layer2: 5,
   layer3: 9,
   noses: 1,
-  neckwear:18
+  neckwear: 18,
 };
-
-
 
 //This component is a container to contain the part of every body array.
 const PartList = (pathOfAssets) => {
-  
   // const [renderBodys, setRenderBodys] = useState(false);
   // const [renderEarrings, setRenderEarrings] = useState(false);
   // const [renderEyebrows, setRenderEyebrows] = useState(false);
@@ -104,70 +101,74 @@ const PartList = (pathOfAssets) => {
   // this button work very well.
   const handleClick = (i) => {
     console.log(i);
-    setRenderArrays(i)
-
+    setRenderArrays(i);
   };
   return (
-    <div className="h-screen relative justify-center items-center w-full flex flex-col  bg-rose-600">
-      <div className="bg-rose-300 absolute top-6 md:top-9 xl:top-9 flex flex-row overflow-x-scroll w-3/4 gap-3">
+    <div className="h-screen relative justify-center items-center pb-3   w-full flex flex-col">
+      <div className=" h-fit absolute m-3 top-1 md:top-2 xl:top-3 flex flex-row bg-slate-500 overflow-x-scroll w-3/4 gap-3">
         {/* This one using method to render from the arrays of the buttons. */}
         {/* Total: 14buttons and it is a array */}
         {totalButtons.map((button) => (
           <button
             key={button.id}
             className="bg-yellow-400 capitalize rounded-md px-2 py-1"
-            onClick={()=>handleClick(button.name)}>
+            onClick={() => handleClick(button.name)}
+          >
             {button.name}
           </button>
         ))}
       </div>
 
       {/* This using the main Container */}
-      <div className="w-3/4 h-4/5 relative bottom-6 justify-center items-center bg-stone-500 flex">
-        
-        {renderArrays === "bodys" && 
+      <div className="w-3/4 h-4/5 absolute bottom-8 m-3 justify-center bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 items-center flex">
+        {renderArrays === "bodys" && (
           <PartContainer pathOfAssets={"body"} index={total.bodys} />
-        }
-        {renderArrays === "earrings" &&
+        )}
+        {renderArrays === "earrings" && (
           <PartContainer pathOfAssets={"earrings"} index={total.earrings} />
-        }
-        {renderArrays === "eyebrows" &&
+        )}
+        {renderArrays === "eyebrows" && (
           <PartContainer pathOfAssets={"eyebrows"} index={total.eyebrows} />
-        }
-        {renderArrays === "eyes" &&
+        )}
+        {renderArrays === "eyes" && (
           <PartContainer pathOfAssets={"eyes"} index={total.eyes} />
-        }
-        {renderArrays === "facial_hairs" &&
-          <PartContainer pathOfAssets={"facial_hair"} index={total.facial_hairs}/>
-        }
-        {renderArrays === "glasses" &&
-        <PartContainer pathOfAssets={"glasses"} index={total.glasses}/>
-        }
-        {renderArrays === "hairs" &&
-        <PartContainer pathOfAssets={"hairs"} index={total.hairs}/> 
-        }
-        {renderArrays === "basics" &&
-        <PartContainer pathOfAssets={"layer_1"} index={total.layer1}/>
-        }
-        {renderArrays === "layers" &&
-        <PartContainer pathOfAssets={"layer_2"} index={total.layer2}/>
-        }
-        {renderArrays === "wearings" &&
-        <PartContainer pathOfAssets={"layer_3"} index={total.layer3}/>
-        }
-        {renderArrays === "mouths" &&
-        <PartContainer pathOfAssets={"mouths"} index={total.mouths}/>
-        }
-        {renderArrays === "neckwear" &&
-        <PartContainer pathOfAssets={"neckwear"} index={total.neckwear}/>
-        }
-        {renderArrays === "noses" &&
-        <PartContainer pathOfAssets={"noses"} index={total.noses}/> 
-        }
-        
+        )}
+        {renderArrays === "facial_hairs" && (
+          <PartContainer
+            pathOfAssets={"facial_hair"}
+            index={total.facial_hairs}
+          />
+        )}
+        {renderArrays === "glasses" && (
+          <PartContainer pathOfAssets={"glasses"} index={total.glasses} />
+        )}
+        {renderArrays === "hairs" && (
+          <PartContainer pathOfAssets={"hairs"} index={total.hairs} />
+        )}
+        {renderArrays === "basics" && (
+          <PartContainer pathOfAssets={"layer_1"} index={total.layer1} />
+        )}
+        {renderArrays === "layers" && (
+          <PartContainer pathOfAssets={"layer_2"} index={total.layer2} />
+        )}
+        {renderArrays === "wearings" && (
+          <PartContainer pathOfAssets={"layer_3"} index={total.layer3} />
+        )}
+        {renderArrays === "mouths" && (
+          <PartContainer pathOfAssets={"mouths"} index={total.mouths} />
+        )}
+        {renderArrays === "neckwear" && (
+          <PartContainer pathOfAssets={"neckwear"} index={total.neckwear} />
+        )}
+        {renderArrays === "noses" && (
+          <PartContainer pathOfAssets={"noses"} index={total.noses} />
+        )}
+        {renderArrays === "hats" && (
+          <PartContainer pathOfAssets={"hats"} index={total.hats} />
+        )}
       </div>
     </div>
   );
-}
+};
 
 export default PartList;
