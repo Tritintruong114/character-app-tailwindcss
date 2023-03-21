@@ -106,6 +106,9 @@ const PartList = (pathOfAssets) => {
   return (
     <div className="h-screen relative justify-center items-center pb-3  w-full flex flex-col">
       {/* This using the main Container */}
+      <h1 className="w-full font- flex justify-center items-center font-bold absolute text-2xl top-1">
+        Character
+      </h1>
       <div className="w-3/4 h-5/6 absolute bottom-8 m-3 shadow-[0px_6px_6px_0px_rgba(0,2,30)] justify-center bg-gradient-to-l   from-rose-100 to-teal-100 rounded-xl  items-center flex">
         <div className=" absolute m-1 py-3 pl-3 scroll-smooth hover:scroll-auto top-1 md:top-2 xl:top-3 flex flex-row overflow-x-scroll w-full gap-3">
           {/* This one using method to render from the arrays of the buttons. */}
