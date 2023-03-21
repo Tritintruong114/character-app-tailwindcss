@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import ReactTypingEffect from "react-typing-effect";
 
-function HelloComponents() {
+function HelloComponents({ handleClick }) {
   const [mousePosition, setMousePosition] = useState({
     x: 0,
     y: 0,
@@ -62,10 +62,15 @@ function HelloComponents() {
           className="text-3xl font-mono text-gray-100 font-bold md:text-6xl xl:text-7xl"
         >
           <ReactTypingEffect
-            eraseSpeed={21}
-            eraseDelay={1000}
+            eraseSpeed={25}
+            eraseDelay={2000}
             speed={21}
-            text={["Hi there👋,Wait!", "Thank you!", "You guys are amazing!"]}
+            text={[
+              "Hi there👋",
+              "Have some lofi️🎶",
+              "Thank you!💓",
+              "You guys are amazing!👏",
+            ]}
           />
         </h1>
       </div>
