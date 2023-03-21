@@ -120,7 +120,7 @@ const PartList = ({ pathOfAssets }) => {
           {/* Total: 14buttons and it is a array */}
           {totalButtons.map((button) => (
             <button
-              key={button.id}
+              key={button.id }
               className=" px-3 text-xs font-light bg-gradient-to-r shadow-[1.0px_6.0px_0.0px_rgba(0,0,0,0.38)] from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 text-white focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-600 hover:scale-110 transition ease-in-out capitalize rounded-md"
               onClick={() => handleClick(button.name)}
             >
