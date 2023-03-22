@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
-import MainSecond from "../components/MainSecond";
-import Header from "./Header";
-import HelloComponents from "./HelloComponents";
+import MainSecond from "./MainSecond";
+import Header from "../common/Header";
+import HelloComponents from "../common/HelloComponents";
 // import AnimatedMouse from "./AnimatedMouse";
 // import background from "../assets/backgroundIMG/background.png";
 
