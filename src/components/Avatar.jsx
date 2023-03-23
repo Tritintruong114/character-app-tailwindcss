@@ -5,6 +5,8 @@ import PartContainer from "../common/PartContainer";
 import ReactTypingEffect from "react-typing-effect";
 //This is component for main Avatar
 const Avatar = ({
+  // pathOfAssets,
+  index,
   bodys,
   earrings,
   eyesbrows,
@@ -18,7 +20,7 @@ const Avatar = ({
   layer3,
   mouths,
   noses,
-  neckwear,
+  neckwears,
 }) => {
   return (
     //   This is big container for the Avater Component
@@ -40,34 +42,30 @@ const Avatar = ({
 
           {/* <p className="absolute -top-3 font-light">Make A Cool Avatar!</p> */}
           <div className="bg-gradient-to-r  shadow-[6.0px_6.0px_3.0px_rgba(0,0,0,0.38)]  from-rose-100 to-teal-100 rounded-xl text-white w-10/12 h-full justify-center items-center flex">
-            <PartOfAvatar index={bodys} path={"body"} className="z-0" />
+            <PartOfAvatar index={index} path={bodys} className="z-0" />
             <PartOfAvatar
-              index={earrings}
-              path={"earrings"}
+              index={index}
+              path="earrings"
               className="z-10"
               // zIndex={1}
             />
             <PartOfAvatar
-              index={eyesbrows}
-              path={"eyesbrows"}
+              index={index}
+              path="eyebrows"
               className="z-10"
               // zIndex={1}
             />
-            <PartOfAvatar index={eyes} path={"eyes"} className="z-10" />
-            <PartOfAvatar
-              index={facial_hairs}
-              path={"facial_hairs"}
-              className="z-10"
-            />
-            <PartOfAvatar index={glasses} path={"glasses"} className="z-10" />
-            <PartOfAvatar index={hairs} path={"hairs"} className="z-20" />
-            <PartOfAvatar index={hats} path={"hats"} className="z-30" />
-            <PartOfAvatar index={layer1} path={"layer_1"} className="z-10" />
-            <PartOfAvatar index={layer2} path={"layer_2"} className="z-10" />
-            <PartOfAvatar index={layer3} path={"layer_3"} className="z-10" />
-            <PartOfAvatar index={mouths} path={"mouths"} className="z-10" />
-            <PartOfAvatar index={neckwear} path={"neckwear"} className="z-30" />
-            <PartOfAvatar index={noses} path={"noses"} className="z-50" />
+            <PartOfAvatar index={index} path="eyes" className="z-10" />
+            <PartOfAvatar index={index} path="facial_hair" className="z-10" />
+            <PartOfAvatar index={index} path="glasses" className="z-10" />
+            <PartOfAvatar index={index} path="hairs" className="z-20" />
+            <PartOfAvatar index={index} path="hats" className="z-30" />
+            <PartOfAvatar index={index} path="layer_1" className="z-10" />
+            <PartOfAvatar index={index} path="layer_2" className="z-10" />
+            <PartOfAvatar index={index} path="layer_3" className="z-10" />
+            <PartOfAvatar index={index} path="mouths" className="z-10" />
+            <PartOfAvatar index={index} path="noses" className="z-30" />
+            <PartOfAvatar index={index} path="neckwear" className="z-50" />
           </div>
         </div>
 
@@ -75,14 +73,14 @@ const Avatar = ({
         <div className="absolute bottom-3 w-full flex justify-around items-center">
           <button
             type="button"
-            class="text-white shadow-[1.0px_6.0px_0.0px_rgba(0,0,0,0.38)] bg-gradient-to-r h-8 w-20 hover:scale-110 transition ease-in outline-none from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-600 font-medium rounded-lg text-sm text-center"
+            className="text-white shadow-[1.0px_6.0px_0.0px_rgba(0,0,0,0.38)] bg-gradient-to-r h-8 w-20 hover:scale-110 transition ease-in outline-none from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-600 font-medium rounded-lg text-sm text-center"
           >
             Customize
           </button>
 
           <button
             type="button"
-            class="text-white shadow-[1.0px_6.0px_0.0px_rgba(0,0,0,0.38)]  bg-gradient-to-r h-8 w-20 hover:scale-110 transition ease-in outline-none from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-600 font-medium rounded-lg text-sm text-center"
+            className="text-white shadow-[1.0px_6.0px_0.0px_rgba(0,0,0,0.38)]  bg-gradient-to-r h-8 w-20 hover:scale-110 transition ease-in outline-none from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-600 font-medium rounded-lg text-sm text-center"
           >
             Restart
           </button>

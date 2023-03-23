@@ -4,9 +4,9 @@ import Avatar from "./Avatar";
 import { forwardRef } from "react";
 import PartList from "./PartList";
 
-const MainSecond = ({ index }, ref) => {
-  const [bodys, setBodys] = useState(0);
-  const [earrings, setEarrings] = useState(0);
+const MainSecond = ({}, ref) => {
+  const [bodys, setBodys] = useState();
+  const [earrings, setEarrings] = useState();
   const [eyesbrows, setEyesbrows] = useState(0);
   const [eyes, setEyes] = useState(0);
   const [facial_hairs, setFacial_hairs] = useState(0);
@@ -19,32 +19,29 @@ const MainSecond = ({ index }, ref) => {
   const [mouths, setMouths] = useState(0);
   const [noses, setNoses] = useState(0);
   const [neckwears, setNeckwears] = useState(0);
+  const [pathOfAssets, setPathOfAssets] = useState(0);
+  const [index, setIndex] = useState();
+
+  // this is take the path and number index sucesss
+  const handleClickSetAvatar = ([i, pathOfAssets]) => {
+    console.log(i);
+    console.log(pathOfAssets);
+    setBodys(pathOfAssets);
+  };
   return (
     <div className="w-full h-fit justify-center sm:flex-col md:flex-row xl:flex-row items-center flex flex-col bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-red-300 via-amber-500 to-cyan-100">
       <div
         className="w-full md:w-4/5 xl:w-4/5 flex flex-col sm:flex-col md:flex-row xl:flex-row h-fit "
         ref={ref}
       >
-        <Avatar
-          bodys={bodys}
-          earrings={earrings}
-          eyes={eyes}
-          eyesbrows={eyesbrows}
-          hats={hats}
-          hairs={hairs}
-          glasses={glasses}
-          facial_hair={facial_hairs}
-          layer1={layer1}
-          layer2={layer2}
-          layer3={layer3}
-          mouths={mouths}
-          neckwears={neckwears}
-          noses={noses}
-        />
+        <Avatar bodys="body" index={1} />
       </div>
 
       <div className="w-full h-fit md:w-2/4 xl:w-2/4">
-        <PartList />
+        <PartList
+          pathForAvatar={pathOfAssets}
+          handleClickSetAvatar={handleClickSetAvatar}
+        />
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import React from "react";
 function PartOfAvatar({ path, index }) {
   return (
     <img
-      src={`assets/${path}/${index}.png`}
+      src={`assets/${path}/${index + 1}.png`}
       // zIndex={zIndex}
       className="absolute h-5/6"
       alt=""

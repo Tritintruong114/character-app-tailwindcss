@@ -19,7 +19,7 @@ const total = {
 };
 
 //This component is a container to contain the part of every body array.
-const PartList = ({ pathOfAssets }) => {
+const PartList = ({ handleClickSetAvatar, pathForAvatar }) => {
   // const [renderBodys, setRenderBodys] = useState(false);
   // const [renderEarrings, setRenderEarrings] = useState(false);
   // const [renderEyebrows, setRenderEyebrows] = useState(false);
@@ -34,7 +34,7 @@ const PartList = ({ pathOfAssets }) => {
   // const [renderMouths, setRenderMouths] = useState(false);
   // const [renderNeckwears, setRenderNeckwears] = useState(false);
   // const [renderNoses, setRenderNoses] = useState(false);
-  const [pathForAvatar, setPathForAvatar] = useState("");
+  // const [pathForAvatar, setPathForAvâtr] = useState("");
   const [renderArrays, setRenderArrays] = useState("");
   ///This contant for rendering the all buttons of the list
 
@@ -99,14 +99,13 @@ const PartList = ({ pathOfAssets }) => {
     },
   ];
 
-  const handleClickSetAvatar = (i) => {
-    console.log(i);
-  };
+  // const handleClickSetAvatar = (i) => {
+  //   console.log(i);
+  // };
   // this button work very well.
   const handleClick = (i) => {
-    console.log(i);
-    setRenderArrays(i);
-    setPathForAvatar(i);
+    console.log(i[0]);
+    setRenderArrays(i[0]);
   };
   return (
     <div className="h-screen relative justify-center items-center pb-3  w-full flex flex-col">
@@ -122,7 +121,7 @@ const PartList = ({ pathOfAssets }) => {
             <button
               key={button.id}
               className=" px-3 text-xs font-light bg-gradient-to-r shadow-[1.0px_6.0px_0.0px_rgba(0,0,0,0.38)] from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 text-white focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-600 hover:scale-110 transition ease-in-out capitalize rounded-md"
-              onClick={() => handleClick(button.name)}
+              onClick={() => handleClick([button.name, pathForAvatar])}
             >
               {button.name}
             </button>
@@ -156,7 +155,7 @@ const PartList = ({ pathOfAssets }) => {
             index={total.eyes}
           />
         )}
-        {renderArrays === "facial_hairs" && (
+        {renderArrays === "Beards" && (
           <PartContainer
             handleClickSetAvatar={handleClickSetAvatar}
             pathOfAssets={"facial_hair"}
