@@ -10,31 +10,47 @@ const MainSecond = ({}, ref) => {
   const [eyesbrows, setEyesbrows] = useState({ value: "eyebrows", index: 0 });
   const [eyes, setEyes] = useState({ value: "eyes", index: 0 });
   const [facial_hairs, setFacial_hairs] = useState({
-    value: "facial_hairs",
+    value: "facial_hair",
     index: 0,
   });
-  const [glasses, setglasses] = useState({ value: "glasses", index: 0 });
+  const [glasses, setGlasses] = useState({ value: "glasses", index: 0 });
   const [hairs, setHairs] = useState({ value: "hairs", index: 0 });
   const [hats, setHats] = useState({ value: "hats", index: 0 });
-  const [layer1, setLayer1] = useState({ value: "layer1", index: 0 });
-  const [layer2, setlayer2] = useState({ value: "layer2", index: 0 });
-  const [layer3, setlayer3] = useState({ value: "layer3", index: 0 });
+  const [layer1, setLayer1] = useState({ value: "layer_1", index: 0 });
+  const [layer2, setLayer2] = useState({ value: "layer_2", index: 0 });
+  const [layer3, setLayer3] = useState({ value: "layer_3", index: 0 });
   const [mouths, setMouths] = useState({ value: "mouths", index: 0 });
   const [noses, setNoses] = useState({ value: "noses", index: 0 });
   const [neckwears, setNeckwears] = useState({ value: "neckwear", index: 0 });
   // const [index, setIndex] = useState();
   //
   // this is take the path and number index sucesss
-  const handleCustomize = () => {
-    console.log("THIS IS CUSTOMIZE BUTTON");
-  };
 
+  const handleCustomize = () => {
+    console.log("Customize");
+  }
+  
+  
   const handleRestart = () => {
-    console.log("THIS IS restart BUTTON");
-  };
+    console.log("Restart");
+  }
+
+  
 
   const handleClickSetAvatar = (i, value) => {
+    if (value === "facial_hair") setFacial_hairs((e) => ({ ...e, index: i + 1 }));
+    if (value === "earrings") setEarrings((e) => ({ ...e, index: i + 1 }));
+    if (value === "eyebrows") setEyesbrows((e) => ({ ...e, index: i + 1 }));
+    if (value === "glasses") setGlasses((e) => ({ ...e, index: i + 1 }));
+    if (value === "hairs") setHairs((e) => ({ ...e, index: i + 1 }));
+    if (value === "hats") setHats((e) => ({ ...e, index: i + 1 }));
+    if (value === "layer_3") setLayer3((e) => ({ ...e, index: i + 1 }));
+    if (value === "layer_2") setLayer2((e) => ({ ...e, index: i + 1 }));
+    if (value === "layer_1") setLayer1((e) => ({ ...e, index: i + 1 }));
     if (value === "neckwear") setNeckwears((e) => ({ ...e, index: i + 1 }));
+    if (value === "eyes") setEyes((e) => ({ ...e, index: i + 1 }));
+    if (value === "noses") setNoses((e) => ({ ...e, index: i + 1 }));
+    if (value === "body") setBodys((e) => ({ ...e, index: i + 1 }));
     if (value === "mouths") setMouths((e) => ({ ...e, index: i + 1 })); //(mouths.index = i + 1)
     // batching  /// shallow compared  /// type reference // type value  M2.2 React Router , Redux , Database , RestFul API // SPA // redux router
   };
@@ -45,7 +61,7 @@ const MainSecond = ({}, ref) => {
         className="w-full md:w-4/5 xl:w-4/5 flex flex-col sm:flex-col md:flex-row xl:flex-row h-fit "
         ref={ref}
       >
-        <Avatar
+        <Avatar    
           handleCustomize={handleCustomize}
           handleRestart={handleRestart}
           bodys={bodys}

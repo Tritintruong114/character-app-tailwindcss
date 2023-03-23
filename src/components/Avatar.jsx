@@ -24,6 +24,10 @@ const Avatar = ({
   noses,
   neckwears, ///  === {value "neckwears",index = 2}
 }) => {
+
+
+
+
   return (
     //   This is big container for the Avater Component
     <div className="h-screen  md:w-full flex flex-col justify-center items-center relative xl:w-full">
@@ -44,23 +48,23 @@ const Avatar = ({
 
           {/* <p className="absolute -top-3 font-light">Make A Cool Avatar!</p> */}
           <div className="bg-gradient-to-r  shadow-[6.0px_6.0px_3.0px_rgba(0,0,0,0.38)]  from-rose-100 to-teal-100 rounded-xl text-white w-10/12 h-full justify-center items-center flex">
-            <PartOfAvatar index={index} path={bodys} className="z-0" />
-            <PartOfAvatar index={index} path={earrings} className="z-30" />
-            <PartOfAvatar index={index} path={eyebrows} className="z-10" />
-            <PartOfAvatar index={index} path={eyes} className="z-10" />
-            <PartOfAvatar index={index} path={facial_hairs} className="z-10" />
-            <PartOfAvatar index={index} path={glasses} className="z-10" />
-            <PartOfAvatar index={index} path={hairs} className="z-20" />
-            <PartOfAvatar index={index} path={hats} className="z-30" />
-            <PartOfAvatar index={index} path={layer1} className="z-10" />
-            <PartOfAvatar index={index} path={layer2} className="z-10" />
-            <PartOfAvatar index={index} path={layer3} className="z-10" />
+            <PartOfAvatar index={bodys.index} path={bodys.value} className="z-0" />
+            <PartOfAvatar index={earrings.index} path={earrings.value} className="z-30" />
+            <PartOfAvatar index={eyebrows.index} path={eyebrows.value} className="z-10" />
+            <PartOfAvatar index={eyes.index} path={eyes.value} className="z-10" />
+            <PartOfAvatar index={facial_hairs.index} path={facial_hairs.value} className="z-10" />
+            <PartOfAvatar index={glasses.index} path={glasses.value} className="z-10" />
+            <PartOfAvatar index={index} path={hairs.value} className="z-20" />
+            <PartOfAvatar index={hats.index} path={hats.value} className="z-30" />
+            <PartOfAvatar index={layer1.index} path={layer1.value} className="z-10" />
+            <PartOfAvatar index={layer2.index} path={layer2.value} className="z-10" />
+            <PartOfAvatar index={layer3.index} path={layer3.value} className="z-10" />
             <PartOfAvatar
               index={mouths.index}
               path={mouths.value}
               className="z-10"
             />
-            <PartOfAvatar index={index} path={noses} className="z-30" />
+            <PartOfAvatar index={noses.index} path={noses.value} className="z-30" />
             <PartOfAvatar
               index={neckwears.index}
               path={neckwears.value}
