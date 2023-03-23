@@ -6,10 +6,12 @@ import ReactTypingEffect from "react-typing-effect";
 //This is component for main Avatar
 const Avatar = ({
   // pathOfAssets,
-  index,
+  handleCustomize,
+  handleRestart,
+  index, //// ==== 6
   bodys,
   earrings,
-  eyesbrows,
+  eyebrows,
   eyes,
   facial_hairs,
   glasses,
@@ -20,7 +22,7 @@ const Avatar = ({
   layer3,
   mouths,
   noses,
-  neckwears,
+  neckwears, ///  === {value "neckwears",index = 2}
 }) => {
   return (
     //   This is big container for the Avater Component
@@ -43,35 +45,34 @@ const Avatar = ({
           {/* <p className="absolute -top-3 font-light">Make A Cool Avatar!</p> */}
           <div className="bg-gradient-to-r  shadow-[6.0px_6.0px_3.0px_rgba(0,0,0,0.38)]  from-rose-100 to-teal-100 rounded-xl text-white w-10/12 h-full justify-center items-center flex">
             <PartOfAvatar index={index} path={bodys} className="z-0" />
+            <PartOfAvatar index={index} path={earrings} className="z-30" />
+            <PartOfAvatar index={index} path={eyebrows} className="z-10" />
+            <PartOfAvatar index={index} path={eyes} className="z-10" />
+            <PartOfAvatar index={index} path={facial_hairs} className="z-10" />
+            <PartOfAvatar index={index} path={glasses} className="z-10" />
+            <PartOfAvatar index={index} path={hairs} className="z-20" />
+            <PartOfAvatar index={index} path={hats} className="z-30" />
+            <PartOfAvatar index={index} path={layer1} className="z-10" />
+            <PartOfAvatar index={index} path={layer2} className="z-10" />
+            <PartOfAvatar index={index} path={layer3} className="z-10" />
             <PartOfAvatar
-              index={index}
-              path="earrings"
+              index={mouths.index}
+              path={mouths.value}
               className="z-10"
-              // zIndex={1}
             />
+            <PartOfAvatar index={index} path={noses} className="z-30" />
             <PartOfAvatar
-              index={index}
-              path="eyebrows"
-              className="z-10"
-              // zIndex={1}
+              index={neckwears.index}
+              path={neckwears.value}
+              className="z-50"
             />
-            <PartOfAvatar index={index} path="eyes" className="z-10" />
-            <PartOfAvatar index={index} path="facial_hair" className="z-10" />
-            <PartOfAvatar index={index} path="glasses" className="z-10" />
-            <PartOfAvatar index={index} path="hairs" className="z-20" />
-            <PartOfAvatar index={index} path="hats" className="z-30" />
-            <PartOfAvatar index={index} path="layer_1" className="z-10" />
-            <PartOfAvatar index={index} path="layer_2" className="z-10" />
-            <PartOfAvatar index={index} path="layer_3" className="z-10" />
-            <PartOfAvatar index={index} path="mouths" className="z-10" />
-            <PartOfAvatar index={index} path="noses" className="z-30" />
-            <PartOfAvatar index={index} path="neckwear" className="z-50" />
           </div>
         </div>
 
         {/* This is for the div contain the 2 button below */}
         <div className="absolute bottom-3 w-full flex justify-around items-center">
           <button
+            onClick={handleCustomize}
             type="button"
             className="text-white shadow-[1.0px_6.0px_0.0px_rgba(0,0,0,0.38)] bg-gradient-to-r h-8 w-20 hover:scale-110 transition ease-in outline-none from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-600 font-medium rounded-lg text-sm text-center"
           >
@@ -79,6 +80,7 @@ const Avatar = ({
           </button>
 
           <button
+            onClick={handleRestart}
             type="button"
             className="text-white shadow-[1.0px_6.0px_0.0px_rgba(0,0,0,0.38)]  bg-gradient-to-r h-8 w-20 hover:scale-110 transition ease-in outline-none from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-600 font-medium rounded-lg text-sm text-center"
           >

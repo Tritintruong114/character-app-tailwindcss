@@ -19,22 +19,7 @@ const total = {
 };
 
 //This component is a container to contain the part of every body array.
-const PartList = ({ handleClickSetAvatar, pathForAvatar }) => {
-  // const [renderBodys, setRenderBodys] = useState(false);
-  // const [renderEarrings, setRenderEarrings] = useState(false);
-  // const [renderEyebrows, setRenderEyebrows] = useState(false);
-  // const [renderEyes, setRenderEyes] = useState(false);
-  // const [renderFacial_Hairs, setRenderFacial_Hairs] = useState(false);
-  // const [renderGlasses, setRenderGlasses] = useState(false);
-  // const [renderHairs, setRenderHairs] = useState(false);
-  // const [renderHats, setRenderHats] = useState(false);
-  // const [renderLayer_1, setRenderLayer_1] = useState(false);
-  // const [renderLayer_2, setRenderLayer_2] = useState(false);
-  // const [renderLayer_3, setRenderLayer_3] = useState(false);
-  // const [renderMouths, setRenderMouths] = useState(false);
-  // const [renderNeckwears, setRenderNeckwears] = useState(false);
-  // const [renderNoses, setRenderNoses] = useState(false);
-  // const [pathForAvatar, setPathForAvâtr] = useState("");
+const PartList = ({ handleClickSetAvatar }) => {
   const [renderArrays, setRenderArrays] = useState("");
   ///This contant for rendering the all buttons of the list
 
@@ -99,9 +84,6 @@ const PartList = ({ handleClickSetAvatar, pathForAvatar }) => {
     },
   ];
 
-  // const handleClickSetAvatar = (i) => {
-  //   console.log(i);
-  // };
   // this button work very well.
   const handleClick = (i) => {
     console.log(i[0]);
@@ -121,7 +103,7 @@ const PartList = ({ handleClickSetAvatar, pathForAvatar }) => {
             <button
               key={button.id}
               className=" px-3 text-xs font-light bg-gradient-to-r shadow-[1.0px_6.0px_0.0px_rgba(0,0,0,0.38)] from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 text-white focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-600 hover:scale-110 transition ease-in-out capitalize rounded-md"
-              onClick={() => handleClick([button.name, pathForAvatar])}
+              onClick={() => handleClick([button.name])}
             >
               {button.name}
             </button>

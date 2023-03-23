@@ -1,11 +1,13 @@
 import React from "react";
 
 const PartContainer = ({ handleClickSetAvatar, pathOfAssets, index }) => {
+
   let arrayOfParts = [];
+  
   for (let i = 0; i < index; i++) {
     arrayOfParts.push(
       <img
-        onClick={() => handleClickSetAvatar([i, pathOfAssets])}
+        onClick={() => handleClickSetAvatar(i,pathOfAssets)}
         key={i}
         src={`/assets/${pathOfAssets}/${i + 1}.png`}
         alt=""
@@ -13,6 +15,7 @@ const PartContainer = ({ handleClickSetAvatar, pathOfAssets, index }) => {
       ></img>
     );
   }
+  /// array.map(i => <p  onClick={()=>handle} key=> i.context <p/>)
   return (
     <div className="h-5/6 rounded-xl  bottom-0 p-3 w-fit gap-3 grid grid-cols-2 justify-center items-center  overflow-x-scroll absolute ">
       {arrayOfParts}
