@@ -3,7 +3,22 @@ import { useEffect, useState } from "react";
 import Avatar from "./Avatar";
 import { forwardRef } from "react";
 import PartList from "./PartList";
-
+const total = {
+  earrings: 32,
+  bodys: 17,
+  eyes: 17,
+  hairs: 73,
+  mouths: 24,
+  facial_hairs: 17,
+  eyebrows: 15,
+  hats: 28,
+  glasses: 17,
+  layer1: 5,
+  layer2: 5,
+  layer3: 9,
+  noses: 1,
+  neckwear: 18,
+};
 const MainSecond = ({}, ref) => {
   const [bodys, setBodys] = useState({ value: "body", index: 0 });
   const [earrings, setEarrings] = useState({ value: "earrings", index: 0 });
@@ -27,18 +42,126 @@ const MainSecond = ({}, ref) => {
   // this is take the path and number index sucesss
 
   const handleCustomize = () => {
-    console.log("Customize");
-  }
-  
-  
-  const handleRestart = () => {
-    console.log("Restart");
-  }
+    setFacial_hairs((e) => ({
+      ...e,
+      index: Math.floor(Math.random() * total.facial_hairs),
+    }));
+    setEarrings((e) => ({
+      ...e,
+      index: Math.floor(Math.random() * total.earrings),
+    }));
+    setEyesbrows((e) => ({
+      ...e,
+      index: Math.floor(Math.random() * total.eyebrows),
+    }));
+    setGlasses((e) => ({
+      ...e,
+      index: Math.floor(Math.random() * total.glasses),
+    }));
+    setHairs((e) => ({
+      ...e,
+      index: Math.floor(Math.random() * total.hairs),
+    }));
+    setHats((e) => ({
+      ...e,
+      index: Math.floor(Math.random() * total.hats),
+    }));
+    setLayer3((e) => ({
+      ...e,
+      index: Math.floor(Math.random() * total.layer3),
+    }));
+    setLayer2((e) => ({
+      ...e,
+      index: Math.floor(Math.random() * total.layer2),
+    }));
+    setLayer1((e) => ({
+      ...e,
+      index: Math.floor(Math.random() * total.layer1),
+    }));
+    setNeckwears((e) => ({
+      ...e,
+      index: Math.floor(Math.random() * total.neckwear),
+    }));
+    setNoses((e) => ({
+      ...e,
+      index: Math.floor(Math.random() * total.noses),
+    }));
+    setMouths((e) => ({
+      ...e,
+      index: Math.floor(Math.random() * total.mouths),
+    }));
+    setBodys((e) => ({
+      ...e,
+      index: Math.floor(Math.random() * total.bodys),
+    }));
+    setEyes((e) => ({
+      ...e,
+      index: Math.floor(Math.random() * total.eyes),
+    }));
+  };
 
-  
+  const handleRestart = () => {
+    setFacial_hairs((e) => ({
+      ...e,
+      index: 0,
+    }));
+    setEarrings((e) => ({
+      ...e,
+      index: 0,
+    }));
+    setEyesbrows((e) => ({
+      ...e,
+      index: 0,
+    }));
+    setGlasses((e) => ({
+      ...e,
+      index: 0,
+    }));
+    setHairs((e) => ({
+      ...e,
+      index: 0,
+    }));
+    setHats((e) => ({
+      ...e,
+      index: 0,
+    }));
+    setLayer3((e) => ({
+      ...e,
+      index: 0,
+    }));
+    setLayer2((e) => ({
+      ...e,
+      index: 0,
+    }));
+    setLayer1((e) => ({
+      ...e,
+      index: 0,
+    }));
+    setNeckwears((e) => ({
+      ...e,
+      index: 0,
+    }));
+    setNoses((e) => ({
+      ...e,
+      index: 0,
+    }));
+    setMouths((e) => ({
+      ...e,
+      index: 0,
+    }));
+    setBodys((e) => ({
+      ...e,
+      index: 0,
+    }));
+    setEyes((e) => ({
+      ...e,
+      index: 0,
+    }));
+  };
 
   const handleClickSetAvatar = (i, value) => {
-    if (value === "facial_hair") setFacial_hairs((e) => ({ ...e, index: i + 1 }));
+    if (value === "facial_hair")
+      setFacial_hairs((e) => ({ ...e, index: i + 1 }));
     if (value === "earrings") setEarrings((e) => ({ ...e, index: i + 1 }));
     if (value === "eyebrows") setEyesbrows((e) => ({ ...e, index: i + 1 }));
     if (value === "glasses") setGlasses((e) => ({ ...e, index: i + 1 }));
@@ -61,7 +184,7 @@ const MainSecond = ({}, ref) => {
         className="w-full md:w-4/5 xl:w-4/5 flex flex-col sm:flex-col md:flex-row xl:flex-row h-fit "
         ref={ref}
       >
-        <Avatar    
+        <Avatar
           handleCustomize={handleCustomize}
           handleRestart={handleRestart}
           bodys={bodys}
