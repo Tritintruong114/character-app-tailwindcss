@@ -2,25 +2,25 @@ import React from "react";
 import { useState } from "react";
 import PartContainer from "./../common/PartContainer";
 const total = {
-  earrings: 32,
-  bodys: 17,
-  eyes: 17,
-  hairs: 73,
-  mouths: 24,
-  facial_hairs: 17,
-  eyebrows: 15,
-  hats: 28,
-  glasses: 17,
-  layer1: 5,
-  layer2: 5,
-  layer3: 9,
-  noses: 1,
-  neckwear: 18,
+  earrings: { total: 32, pathOfAssets: "earrings" },
+  bodies: { total: 17, pathOfAssets: "body" },
+  eyes: { total: 17, pathOfAssets: "eyes" },
+  hairs: { total: 73, pathOfAssets: "hairs" },
+  mouths: { total: 24, pathOfAssets: "mouths" },
+  beards: { total: 17, pathOfAssets: "facialHairs" },
+  eyebrows: { total: 15, pathOfAssets: "eyebrows" },
+  hats: { total: 28, pathOfAssets: "hats" },
+  glasses: { total: 17, pathOfAssets: "glasses" },
+  basics: { total: 5, pathOfAssets: "layer_1" },
+  layers: { total: 5, pathOfAssets: "layer_2" },
+  wearings: { total: 9, pathOfAssets: "layer_3" },
+  noses: { total: 1, pathOfAssets: "noses" },
+  neckwear: { total: 18, pathOfAssets: "neckwear" },
 };
 
 //This component is a container to contain the part of every body array.
 const PartList = ({ handleClickSetAvatar }) => {
-  const [renderArrays, setRenderArrays] = useState("");
+  const [selectedObject, setSelectedObject] = useState(null);
   ///This contant for rendering the all buttons of the list
 
   const totalButtons = [
@@ -43,7 +43,7 @@ const PartList = ({ handleClickSetAvatar }) => {
     },
     {
       id: 5,
-      name: "bodys",
+      name: "bodies",
     },
     {
       id: 6,
@@ -55,7 +55,7 @@ const PartList = ({ handleClickSetAvatar }) => {
     },
     {
       id: 8,
-      name: "Beards",
+      name: "beards",
     },
     {
       id: 9,
@@ -85,10 +85,18 @@ const PartList = ({ handleClickSetAvatar }) => {
   ];
 
   // this button work very well.
-  const handleClick = (i) => {
-    console.log(i[0]);
-    setRenderArrays(i[0]);
+  const handleClick = (name) => {
+    //name = glasses
+    setSelectedObject(total[name]); //<<-- setSelectedObject(total["glasses"]);
+    //total["hairs"] <=> total.hairs
+
+    // { total: 73, pathOfAssets: "hairs" }
+
+    // setSelectObject({ total: 73, pathOfAssets: "hairs" });
+
+    // selectedObject = { total: 73, pathOfAssets: "hairs" }
   };
+
   return (
     <div className="h-screen relative justify-center items-center pb-3  w-full flex flex-col">
       {/* This using the main Container */}
@@ -103,110 +111,18 @@ const PartList = ({ handleClickSetAvatar }) => {
             <button
               key={button.id}
               className=" px-3 py-1 text-xs font-light border-2 text-white  hover:scale-110 transition ease-in-out capitalize rounded-full"
-              onClick={() => handleClick([button.name])}
+              onClick={() => handleClick(button.name)} // button glasses -> button.name => "glasses" => handleClick("glasses")
             >
               {button.name}
             </button>
           ))}
         </div>
-        {renderArrays === "bodys" && (
-          <PartContainer
-            handleClickSetAvatar={handleClickSetAvatar}
-            pathOfAssets={"body"}
-            index={total.bodys}
-          />
-        )}
-        {renderArrays === "earrings" && (
-          <PartContainer
-            handleClickSetAvatar={handleClickSetAvatar}
-            pathOfAssets={"earrings"}
-            index={total.earrings}
-          />
-        )}
-        {renderArrays === "eyebrows" && (
-          <PartContainer
-            handleClickSetAvatar={handleClickSetAvatar}
-            pathOfAssets={"eyebrows"}
-            index={total.eyebrows}
-          />
-        )}
-        {renderArrays === "eyes" && (
-          <PartContainer
-            handleClickSetAvatar={handleClickSetAvatar}
-            pathOfAssets={"eyes"}
-            index={total.eyes}
-          />
-        )}
-        {renderArrays === "Beards" && (
-          <PartContainer
-            handleClickSetAvatar={handleClickSetAvatar}
-            pathOfAssets={"facial_hair"}
-            index={total.facial_hairs}
-          />
-        )}
-        {renderArrays === "glasses" && (
-          <PartContainer
-            handleClickSetAvatar={handleClickSetAvatar}
-            pathOfAssets={"glasses"}
-            index={total.glasses}
-          />
-        )}
-        {renderArrays === "hairs" && (
-          <PartContainer
-            handleClickSetAvatar={handleClickSetAvatar}
-            pathOfAssets={"hairs"}
-            index={total.hairs}
-          />
-        )}
-        {renderArrays === "basics" && (
-          <PartContainer
-            handleClickSetAvatar={handleClickSetAvatar}
-            pathOfAssets={"layer_1"}
-            index={total.layer1}
-          />
-        )}
-        {renderArrays === "layers" && (
-          <PartContainer
-            handleClickSetAvatar={handleClickSetAvatar}
-            pathOfAssets={"layer_2"}
-            index={total.layer2}
-          />
-        )}
-        {renderArrays === "wearings" && (
-          <PartContainer
-            handleClickSetAvatar={handleClickSetAvatar}
-            pathOfAssets={"layer_3"}
-            index={total.layer3}
-          />
-        )}
-        {renderArrays === "mouths" && (
-          <PartContainer
-            handleClickSetAvatar={handleClickSetAvatar}
-            pathOfAssets={"mouths"}
-            index={total.mouths}
-          />
-        )}
-        {renderArrays === "neckwear" && (
-          <PartContainer
-            handleClickSetAvatar={handleClickSetAvatar}
-            pathOfAssets={"neckwear"}
-            index={total.neckwear}
-          />
-        )}
-        {renderArrays === "noses" && (
-          <PartContainer
-            handleClickSetAvatar={handleClickSetAvatar}
-            pathOfAssets={"noses"}
-            index={total.noses}
-          />
-        )}
-        {renderArrays === "hats" && (
-          <PartContainer
-            handleClickSetAvatar={handleClickSetAvatar}
-            pathOfAssets={"hats"}
-            index={total.hats}
-          />
-        )}
+
+        <PartContainer
+          handleClickSetAvatar={handleClickSetAvatar}
+          pathOfAssets={selectedObject?.pathOfAssets} // selectedObject.pathOfAssets -> null?.pathOfAssets -> undefined?.path { total: 73, pathOfAssets: "hairs" }?.pathOfAssets
+          index={selectedObject?.total} // change index to the correct Name of props.
+        />
       </div>
     </div>
     // </div>

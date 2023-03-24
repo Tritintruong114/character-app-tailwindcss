@@ -3,12 +3,12 @@ import React from "react";
 const PartContainer = ({ handleClickSetAvatar, pathOfAssets, index }) => {
   let arrayOfParts = [];
 
-  for (let i = 0; i < index; i++) {
+  for (let i = 1; i <= index; i++) {
     arrayOfParts.push(
       <img
         onClick={() => handleClickSetAvatar(i, pathOfAssets)}
         key={i}
-        src={`/assets/${pathOfAssets}/${i + 1}.png`}
+        src={`/assets/${pathOfAssets}/${i}.png`}
         alt=""
         className="hover:scale-110 shadow-[rgba(0,_0,_0,_0.25)_0px_25px_25px_-25px] transition ease-in-out duration-500 bg-white bg-opacity-10 rounded-xl w-fit flex h-fit justify-center items-center "
       ></img>

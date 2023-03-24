@@ -9,7 +9,7 @@ const total = {
   eyes: 17,
   hairs: 73,
   mouths: 24,
-  facial_hairs: 17,
+  facialHairs: 17,
   eyebrows: 15,
   hats: 28,
   glasses: 17,
@@ -24,8 +24,8 @@ const MainSecond = ({}, ref) => {
   const [earrings, setEarrings] = useState({ value: "earrings", index: 0 });
   const [eyesbrows, setEyesbrows] = useState({ value: "eyebrows", index: 0 });
   const [eyes, setEyes] = useState({ value: "eyes", index: 0 });
-  const [facial_hairs, setFacial_hairs] = useState({
-    value: "facial_hair",
+  const [facialHairs, setFacialHairs] = useState({
+    value: "facialHairs",
     index: 0,
   });
   const [glasses, setGlasses] = useState({ value: "glasses", index: 0 });
@@ -42,9 +42,9 @@ const MainSecond = ({}, ref) => {
   // this is take the path and number index sucesss
 
   const handleCustomize = () => {
-    setFacial_hairs((e) => ({
+    setFacialHairs((e) => ({
       ...e,
-      index: Math.floor(Math.random() * total.facial_hairs),
+      index: Math.floor(Math.random() * total.facialHairs),
     }));
     setEarrings((e) => ({
       ...e,
@@ -101,7 +101,7 @@ const MainSecond = ({}, ref) => {
   };
 
   const handleRestart = () => {
-    setFacial_hairs((e) => ({
+    setFacialHairs((e) => ({
       ...e,
       index: 0,
     }));
@@ -160,21 +160,20 @@ const MainSecond = ({}, ref) => {
   };
 
   const handleClickSetAvatar = (i, value) => {
-    if (value === "facial_hair")
-      setFacial_hairs((e) => ({ ...e, index: i + 1 }));
-    if (value === "earrings") setEarrings((e) => ({ ...e, index: i + 1 }));
-    if (value === "eyebrows") setEyesbrows((e) => ({ ...e, index: i + 1 }));
-    if (value === "glasses") setGlasses((e) => ({ ...e, index: i + 1 }));
-    if (value === "hairs") setHairs((e) => ({ ...e, index: i + 1 }));
-    if (value === "hats") setHats((e) => ({ ...e, index: i + 1 }));
-    if (value === "layer_3") setLayer3((e) => ({ ...e, index: i + 1 }));
-    if (value === "layer_2") setLayer2((e) => ({ ...e, index: i + 1 }));
-    if (value === "layer_1") setLayer1((e) => ({ ...e, index: i + 1 }));
-    if (value === "neckwear") setNeckwears((e) => ({ ...e, index: i + 1 }));
-    if (value === "eyes") setEyes((e) => ({ ...e, index: i + 1 }));
-    if (value === "noses") setNoses((e) => ({ ...e, index: i + 1 }));
-    if (value === "body") setBodys((e) => ({ ...e, index: i + 1 }));
-    if (value === "mouths") setMouths((e) => ({ ...e, index: i + 1 })); //(mouths.index = i + 1)
+    if (value === "facialHairs") setFacialHairs((e) => ({ ...e, index: i }));
+    if (value === "earrings") setEarrings((e) => ({ ...e, index: i }));
+    if (value === "eyebrows") setEyesbrows((e) => ({ ...e, index: i }));
+    if (value === "glasses") setGlasses((e) => ({ ...e, index: i }));
+    if (value === "hairs") setHairs((e) => ({ ...e, index: i }));
+    if (value === "hats") setHats((e) => ({ ...e, index: i }));
+    if (value === "layer_3") setLayer3((e) => ({ ...e, index: i }));
+    if (value === "layer_2") setLayer2((e) => ({ ...e, index: i }));
+    if (value === "layer_1") setLayer1((e) => ({ ...e, index: i }));
+    if (value === "neckwear") setNeckwears((e) => ({ ...e, index: i }));
+    if (value === "eyes") setEyes((e) => ({ ...e, index: i }));
+    if (value === "noses") setNoses((e) => ({ ...e, index: i }));
+    if (value === "body") setBodys((e) => ({ ...e, index: i }));
+    if (value === "mouths") setMouths((e) => ({ ...e, index: i })); //(mouths.index = i)
     // batching  /// shallow compared  /// type reference // type value  M2.2 React Router , Redux , Database , RestFul API // SPA // redux router
   };
 
@@ -198,7 +197,7 @@ const MainSecond = ({}, ref) => {
           layer3={layer3}
           noses={noses}
           mouths={mouths}
-          facial_hairs={facial_hairs}
+          facialHairs={facialHairs}
           neckwears={neckwears} ///  === {value "neckwears",index = 2}
           glasses={glasses}
           // index={index}

@@ -13,7 +13,7 @@ const Avatar = ({
   earrings,
   eyebrows,
   eyes,
-  facial_hairs,
+  facialHairs,
   glasses,
   hairs,
   hats,
@@ -51,8 +51,8 @@ const Avatar = ({
                 <PartOfAvatar index={eyebrows.index} path={eyebrows.value} />
                 <PartOfAvatar index={eyes.index} path={eyes.value} />
                 <PartOfAvatar
-                  index={facial_hairs.index}
-                  path={facial_hairs.value}
+                  index={facialHairs.index}
+                  path={facialHairs.value}
                 />
                 <PartOfAvatar index={glasses.index} path={glasses.value} />
                 <PartOfAvatar index={hairs.index} s path={hairs.value} />
