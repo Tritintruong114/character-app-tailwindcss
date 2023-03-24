@@ -10,7 +10,7 @@ const PartContainer = ({ handleClickSetAvatar, pathOfAssets, index }) => {
         key={i}
         src={`/assets/${pathOfAssets}/${i + 1}.png`}
         alt=""
-        className="hover:scale-110 shadow-[1.0px_6.0px_3.0px_rgba(0,0,0,0.38)] transition ease-in-out duration-500 bg-gradient-to-bl from-red-100 via-red-200 to-yellow-200 rounded-xl w-fit flex h-fit justify-center items-center "
+        className="hover:scale-110 shadow-[rgba(0,_0,_0,_0.25)_0px_25px_25px_-25px] transition ease-in-out duration-500 bg-white bg-opacity-10 rounded-xl w-fit flex h-fit justify-center items-center "
       ></img>
     );
   }
